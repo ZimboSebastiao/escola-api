@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 // Exibindo dados de um aluno
-app.get('/:id', (req, res) => {
+app.get('/alunos/:id', (req, res) => {
     res.send(`Exibindo dados de um aluno`);
 });
 
@@ -30,7 +30,7 @@ app.patch('/alunos/:id', (req, res) => {
 
 // Atualizando dados de um aluo
 app.delete('/alunos/:id', (req, res) => {
-    res.send(`Excluindo alunos`);
+    res.send(`Excluindo um aluno`);
 });
 
 // Executando o servidor 
