@@ -23,4 +23,19 @@ function ler(res) {
     });
 }
 
-export {ler};
+// Inserindo alunos no banco de dados
+function inserir(aluno, res){
+    const sql = "INSERT INTO alunos SET ?";
+    conexao.query(sql, aluno, (erro) => {
+
+        if (erro) {
+            res.status(400).json(erro.code);
+
+        } else {
+            res.status(201).json({"status" : "Aluno inserido"});
+        }
+    });
+    
+}
+
+export {ler, inserir};
