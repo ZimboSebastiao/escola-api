@@ -1,6 +1,14 @@
 import express from "express";
+import {ler} from "./src/aluno.js";
 
 const app = express();
+const porta = 8080;
+
+// Adicionando suporte para o formato Json
+app.use(express.json());
+
+// Adicionando suporte a dados vindo de formulário
+app.use(express.urlencoded({extended : true}));
 
 // Criando as rotas
 // raiz da aplicação
@@ -35,7 +43,7 @@ app.delete('/alunos/:id', (req, res) => {
 
 // Executando o servidor 
 
-const porta = 8080;
+
 app.listen(porta, () => {
     console.log(`Servidor NodeJS rodando na porta ${porta}`);
 })
