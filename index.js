@@ -23,7 +23,8 @@ app.get('/alunos/:id', (req, res) => {
 
 // Exibindo dados de Todos os alunos
 app.get('/alunos', (req, res) => {
-    res.send(`Exibindo dados de todos os alunos`);
+    //res.send(`Exibindo dados de todos os alunos`);
+    ler(res);
 });
 
 // Adicionando um aluno
