@@ -56,4 +56,16 @@ function lerUm(id, res) {
 }
 
 
-export {ler, inserir, lerUm};
+// Atualizar todos ou alguns dados de um aluno
+function atualizar(id, aluno, res) {
+    const sql = "UPDATE alunos SET ? WHERE id = ?";
+    conexao.query(sql, [aluno, id], (erro, resultados) => {
+        if (erro) {
+            res.status(400).json(erro.code); // 400 = BAD Request
+        } else {
+            res.status(200).json({"Status" : "Atualizado com sucesso!"});
+        }
+    })
+}
+
+export {ler, inserir, lerUm, atualizar};
