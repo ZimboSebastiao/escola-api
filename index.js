@@ -1,5 +1,5 @@
 import express from "express";
-import {ler, inserir, lerUm, atualizar} from "./src/aluno.js";
+import {ler, inserir, lerUm, atualizar, excluir} from "./src/aluno.js";
 
 const app = express();
 const porta = 8080;
@@ -46,7 +46,9 @@ app.patch('/alunos/:id', (req, res) => {
 
 // Atualizando dados de um aluo
 app.delete('/alunos/:id', (req, res) => {
-    res.send(`Excluindo um aluno`);
+    //res.send(`Excluindo um aluno`);
+    const id = parseInt(req.params.id);
+    excluir(id, res);
 });
 
 // Executando o servidor 
