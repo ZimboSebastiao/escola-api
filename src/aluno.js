@@ -14,7 +14,6 @@ function ler(res) {
             return;
         }
 
-
         if (erro) {
             res.status(400).json(erro.code); // 400 = BAD Request
         } else {
@@ -38,4 +37,23 @@ function inserir(aluno, res){
     
 }
 
-export {ler, inserir};
+// Ler um aluno
+function lerUm(id, res) {
+    const sql = "SELECT * FROM alunos  WHERE id = ?";
+
+    conexao.query(sql, id, (erro, resultados) => {
+        if (resultados === 0){
+            res.status(204).end();
+            return;
+        }
+
+        if (erro) {
+            res.status(400).json(erro.code); // 400 = BAD Request
+        } else {
+            res.status(200).json(resultados[0]);
+        }
+    });
+}
+
+
+export {ler, inserir, lerUm};
