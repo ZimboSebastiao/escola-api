@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended : true}));
 // Criando as rotas
 // raiz da aplicação
 app.get('/', (req, res) => {
-    res.send(`Raiz da API NodeJS + EXPRESS + MySQL`);
+    res.redirect('https://documenter.getpostman.com/view/29885708/2s9YJZ34YJ');
 });
 
 // Exibindo dados de um aluno
