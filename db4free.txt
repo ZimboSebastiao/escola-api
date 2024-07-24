@@ -1,8 +1,4 @@
-Host: db4free.net
-Nome do banco de dados MySQL:  apizimbo
-Nome de usuário MySQL:  zimbosebastiao
-Senha do MySQL: Zimbo123@
-E-mail: gloriasebastiao7@gmail.com
+
 
 npm i cors
 
